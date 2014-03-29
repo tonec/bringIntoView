@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	
+	<style>
+		.inner {
+			position: relative;
+		}
+		.target {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 1000px;
+			left: 0;
+		}
+	</style>
+
+</head>
+<body>
+
+<div class="container">
+
+	<div class="inner col-md-8 col-md-offset-2">
+		<h1>Bring an element into view</h1>
+		<p>Invoking this plugin on any element that is not currently visible will cause the page to scroll, just enough to bring that element into the visible portion of the browser view port.</p>
+		<p><a id="trigger" href="#">Click to bring into view</a></p>
+		<div id="target" class="target"></div>
+	</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+
+<script src="jquery.bringIntoView.js"></script>
+<script>
+	$( '#trigger' ).bind('click', function( e ){
+		e.preventDefault();
+		$( '#target' ).bringIntoView();
+	});
+</script>
+
+</body>
+</html>
